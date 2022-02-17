@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata 10 - David Ceja</title>
+    <style>
+        body{
+            margin: 0px;
+            margin-left: 5px;
+            padding: 0px;
+            background-color: #202;
+            color: #CCC;
+        }
+    </style>
+</head>
+<body>
+<pre>
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ python3 -m venv entorno_virtual
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ ls entorno_virtual/
+total 20
+drwxrwxr-x 2 dael dael 4096 feb 17 00:18 <font color="#3465A4"><b>bin</b></font>
+drwxrwxr-x 2 dael dael 4096 feb 17 00:18 <font color="#3465A4"><b>include</b></font>
+drwxrwxr-x 3 dael dael 4096 feb 17 00:18 <font color="#3465A4"><b>lib</b></font>
+lrwxrwxrwx 1 dael dael    3 feb 17 00:18 <font color="#06989A"><b>lib64</b></font> -&gt; <font color="#3465A4"><b>lib</b></font>
+-rw-rw-r-- 1 dael dael   70 feb 17 00:18 pyvenv.cfg
+drwxrwxr-x 3 dael dael 4096 feb 17 00:18 <font color="#3465A4"><b>share</b></font>
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ printenv PATH
+/home/dael/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ source entorno_virtual/bin/activate
+(entorno_virtual) <font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ printenv PATH
+/home/dael/Documents/entorno_virtual/bin:/home/dael/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+(entorno_virtual) <font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ pip freeze
+(entorno_virtual) <font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ pip install python-dateutil
+Collecting python-dateutil
+    Using cached python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting six&gt;=1.5
+    Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, python-dateutil
+Successfully installed python-dateutil-2.8.2 six-1.16.0
+(entorno_virtual) <font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ pip freeze
+python-dateutil==2.8.2
+six==1.16.0
+(entorno_virtual) <font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ cat src/app.py 
+from datetime import *
+from dateutil.relativedelta import *
+now = datetime.now()
+print(now)
+
+now = now + relativedelta(months=1, weeks=1, hour=10)
+
+print(now)(entorno_virtual) <font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ python3 src/app.py 
+2022-02-17 00:22:05.010366
+2022-03-24 10:22:05.010366
+(entorno_virtual) <font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ deactivate
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents</b></font>$ 
+
+</pre>
+</body>
+</html>
