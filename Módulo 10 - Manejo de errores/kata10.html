@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata 10 - David Ceja</title>
+    <style>
+        body{
+            margin: 0px;
+            margin-left: 5px;
+            padding: 0px;
+            background-color: #202;
+            color: #CCC;
+        }
+    </style>
+</head>
+<body>
+<pre>
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ python3
+Python 3.8.10 (default, Nov 26 2021, 20:14:08) 
+[GCC 9.3.0] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; open(&quot;/path/to/mars.jpg&quot;)
+Traceback (most recent call last):
+    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+FileNotFoundError: [Errno 2] No such file or directory: &apos;/path/to/mars.jpg&apos;
+&gt;&gt;&gt; 
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ python3 open.py
+Traceback (most recent call last):
+    File &quot;open.py&quot;, line 5, in &lt;module&gt;
+    main()
+    File &quot;open.py&quot;, line 2, in main
+    open(&quot;/path/to/mars.jpg&quot;)
+FileNotFoundError: [Errno 2] No such file or directory: &apos;/path/to/mars.jpg&apos;
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ python3
+Python 3.8.10 (default, Nov 26 2021, 20:14:08) 
+[GCC 9.3.0] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; try:
+...     open(&apos;config.txt&apos;)
+... except FileNotFoundError:
+...     print(&quot;Couldn&apos;t find the config.txt file!&quot;)
+... 
+Couldn&apos;t find the config.txt file!
+&gt;&gt;&gt; 
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ mkdir config.txt
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ python3 config.py
+Traceback (most recent call last):
+    File &quot;config.py&quot;, line 9, in &lt;module&gt;
+    main()
+    File &quot;config.py&quot;, line 3, in main
+    configuration = open(&apos;config.txt&apos;)
+IsADirectoryError: [Errno 21] Is a directory: &apos;config.txt&apos;
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ rm config.txt/
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ touch config.txt
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ chmod -r config.txt 
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ python3 config2.py 
+Couldn&apos;t find the config.txt file!
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ python3 config3.py
+Found config.txt but couldn&apos;t read it. Permission Denied
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ rm config.txt 
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ python3 config3.py
+Couldn&apos;t find the config.txt file!
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$ python3
+Python 3.8.10 (default, Nov 26 2021, 20:14:08) 
+[GCC 9.3.0] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; try:
+...     open(&quot;mars.jpg&quot;)
+... except FileNotFoundError as err:
+...     print(&quot;got a problem trying to read the file:&quot;, err)
+... 
+got a problem trying to read the file: [Errno 2] No such file or directory: &apos;mars.jpg&apos;
+&gt;&gt;&gt; 
+&gt;&gt;&gt; try:
+...     open(&quot;config.txt&quot;)
+... except OSError as err:
+...     if err.errno == 2:
+...         print(&quot;Couldn&apos;t find the config.txt file!&quot;)
+...     elif err.errno == 13:
+...         print(&quot;Found config.txt but couldn&apos;t read it&quot;)
+... 
+Couldn&apos;t find the config.txt file!
+&gt;&gt;&gt; 
+&gt;&gt;&gt; def water_left(astronauts, water_left, days_left):
+...     daily_usage = astronauts * 11
+...     total_usage = daily_usage * days_left
+...     total_water_left = water_left - total_usage
+...     return f&quot;Total water left after {days_left} days is: {total_water_left} liters&quot;
+... 
+&gt;&gt;&gt; water_left(5, 100, 2)
+&apos;Total water left after 2 days is: -10 liters&apos;
+&gt;&gt;&gt; 
+&gt;&gt;&gt; def water_left(astronauts, water_left, days_left):
+...     daily_usage = astronauts * 11
+...     total_usage = daily_usage * days_left
+...     total_water_left = water_left - total_usage
+...     if total_water_left &lt; 0:
+...         raise RuntimeError(f&quot;There is not enough water for {astronauts} astronauts after {days_left} days!&quot;)
+...     return f&quot;Total water left after {days_left} days is: {total_water_left} liters&quot;
+... 
+&gt;&gt;&gt; water_left(5, 100, 2)
+Traceback (most recent call last):
+    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+    File &quot;&lt;stdin&gt;&quot;, line 6, in water_left
+RuntimeError: There is not enough water for 5 astronauts after 2 days!
+&gt;&gt;&gt; 
+&gt;&gt;&gt; water_left(&quot;3&quot;, &quot;200&quot;, None)
+Traceback (most recent call last):
+    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+    File &quot;&lt;stdin&gt;&quot;, line 3, in water_left
+TypeError: can&apos;t multiply sequence by non-int of type &apos;NoneType&apos;
+&gt;&gt;&gt; 
+&gt;&gt;&gt; def water_left(astronauts, water_left, days_left):
+...     for argument in [astronauts, water_left, days_left]:
+...         try:
+...             # If argument is an int, the following operation will work
+...             argument / 10
+...         except TypeError:
+...             # TypError will be raised only if it isn&apos;t the right type 
+...             # Raise the same exception but with a better error message
+...             raise TypeError(f&quot;All arguments must be of type int, but received: &apos;{argument}&apos;&quot;)
+...     daily_usage = astronauts * 11
+...     total_usage = daily_usage * days_left
+...     total_water_left = water_left - total_usage
+...     if total_water_left &lt; 0:
+...         raise RuntimeError(f&quot;There is not enough water for {astronauts} astronauts after {days_left} days!&quot;)
+...     return f&quot;Total water left after {days_left} days is: {total_water_left} liters&quot;
+... 
+&gt;&gt;&gt; water_left(&quot;3&quot;, &quot;200&quot;, None)
+Traceback (most recent call last):
+    File &quot;&lt;stdin&gt;&quot;, line 5, in water_left
+TypeError: unsupported operand type(s) for /: &apos;str&apos; and &apos;int&apos;
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+    File &quot;&lt;stdin&gt;&quot;, line 9, in water_left
+TypeError: All arguments must be of type int, but received: &apos;3&apos;
+&gt;&gt;&gt; 
+<font color="#4E9A06"><b>dael@dael-HP-Pavilion-14-Notebook-PC</b></font>:<font color="#3465A4"><b>~/Documents/CursoIntroPython/Módulo 10 - Manejo de errores</b></font>$
+</pre>
+</body>
+</html>

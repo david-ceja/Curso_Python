@@ -105,7 +105,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-A continuación, quita,ps el archivo *config.txt* y creamos un directorio denominado *config.txt*. Intentaremos llamar al archivo *config.py* para ver un error nuevo que debería ser similar al siguiente:
+A continuación, quitamos el archivo *config.txt* y creamos un directorio denominado *config.txt*. Intentaremos llamar al archivo *config.py* para ver un error nuevo que debería ser similar al siguiente:
 ```
 $ python config.py
 Traceback (most recent call last):
@@ -209,7 +209,7 @@ Es posible que ya conozcas una situación que podría provocar una condición de
 
 La generación de excepciones también puede ayudar en la toma de decisiones para otro código. Como hemos visto antes, en función del error, el código puede tomar decisiones inteligentes para resolver, solucionar o ignorar un problema.
 
-Los astronautas limitan su uso de agua a unos 11 litros al día. Vamos a crear una función que, con base al número de astronautas, pueda calcular la cantidad de agua quedará después de un día o más:
+Los astronautas limitan su uso de agua a unos 11 litros al día. Vamos a crear una función que, con base al número de astronautas, pueda calcular la cantidad de agua que quedará después de un día o más:
 
 ```
 def water_left(astronauts, water_left, days_left):
@@ -218,7 +218,7 @@ def water_left(astronauts, water_left, days_left):
     total_water_left = water_left - total_usage
     return f"Total water left after {days_left} days is: {total_water_left} liters"
 ```
-PruProbemos con cinco astronautas, 100 litros de agua sobrante y dos días:
+Probemos con cinco astronautas, 100 litros de agua sobrante y dos días:
 
 ```
 >>> water_left(5, 100, 2)
@@ -251,7 +251,7 @@ try:
 except RuntimeError as err:
     alert_navigation_system(err)
 ```
-La función `water_left()` también se puede actualizar para evitar el paso de tipos no admitidos. Intentenis pasar argumentos que no sean enteros para comprobar la salida de error:
+La función `water_left()` también se puede actualizar para evitar el paso de tipos no admitidos. Intenta pasar argumentos que no sean enteros para comprobar la salida de error:
 
 ```
 >>> water_left("3", "200", None)
